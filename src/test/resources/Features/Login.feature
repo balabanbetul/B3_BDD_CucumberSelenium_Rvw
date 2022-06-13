@@ -35,4 +35,7 @@ Feature: Login Test-the user should be able to login with valid credential
       |                  | Test123+         | Please fill out Username and Password. |
       | etsB3            |                  | Please fill out Username and Password. |
       |                  |                  | Please fill out Username and Password. |
+  @enc
+  Scenario: Encyryption Test
+    When user enter encyrypted credantials
 

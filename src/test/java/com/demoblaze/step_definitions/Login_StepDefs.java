@@ -3,6 +3,7 @@ package com.demoblaze.step_definitions;
 import com.demoblaze.Pages.LoginPage;
 import com.demoblaze.Utilities.ConfigurationReader;
 import com.demoblaze.Utilities.Driver;
+import com.demoblaze.Utilities.EncryptionUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -43,5 +44,12 @@ loginPage.loginWithParameter_method(userInfo.get("username"),userInfo.get("passw
     public void verify_invalid_credential(String expecedMessage) {
 
 
+    }
+
+    @When("user enter encyrypted credantials")
+    public void userEnterEncyryptedCredantials() {
+        String usernaem= EncryptionUtils.decrypt(ConfigurationReader.get("encryptedUsername"),"Eurotech123");
+        String password=EncryptionUtils.decrypt(ConfigurationReader.get("encryptedPassword"),"Eurotech123");
+        loginPage.loginWithParameter_method(usernaem,password);
     }
 }
