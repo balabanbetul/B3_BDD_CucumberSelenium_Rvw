@@ -76,7 +76,7 @@ public class Driver {
                     }
                 case "remote_firefox":
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
-                    firefoxOptions.setCapability("platform", Platform.ANY);
+                    firefoxOptions.setCapability("platform",Platform.ANY);
                     try {
                         driverPool.set(new RemoteWebDriver(new URL("http://54.175.48.179:4444/wd/hub"),firefoxOptions));
                     } catch (MalformedURLException e) {
